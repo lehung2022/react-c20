@@ -113,10 +113,11 @@ function App() {
   return (
     <>
       <div className="App">
-        <Header title="React JS Blog" width={width}/>
+        <Header title="React JS Blog" width={width} />
         <Nav search={search} setSearch={setSearch} />
         <Routes>
-          <Route exact path="/" element={<Home posts={searchResults} />}>
+          <Route exact path="/" element={<Home posts={searchResults} fetchError={fetchError}
+            isLoading={isLoading} />}>
           </Route>
           <Route exact path="/post" element={<NewPost
             handleSubmit={handleSubmit}
